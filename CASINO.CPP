@@ -1,18 +1,19 @@
-#include<iostream.h>
+#include<iostream>
 #include<conio.h>
 #include<stdlib.h>
 #include<stdio.h>
 #include<time.h>
 
+using namespace std;
 
 void draw_line(int n,char ch);
 void rules();
 
-void main()
+int main()
 {
   int balanceamt,amt,no,dice;
   char playername[80],ch;
-  clrscr();
+  system("cls");
   draw_line(80,'*');
   cout<<"\n\n\n\t\t\t\t  CASINO GAME\n\n\n\n";
   draw_line(80,'*');
@@ -22,7 +23,7 @@ void main()
   cin>>balanceamt;
   do
   {
-    clrscr();
+    system("cls");
     rules();
     cout<<"\n\nYour current balance is Rs."<<balanceamt;
     do
@@ -43,8 +44,8 @@ void main()
 	else
 	   break;
     }while(1);
-  randomize();
-  dice=random(10)+1;
+  rand();
+  dice=rand()%10+1;
   if(dice==no)
   {
     cout<<"\n\nGood Luck!! You won Rs."<<amt*10;
@@ -61,14 +62,15 @@ void main()
   cout<<"\n\n-->Do you want to play (y/n)? ";
   cin>>ch;
   }while(ch=='Y'|| ch=='y');
-  clrscr();
+  system("cls");
   cout<<"\n\n\n";
   draw_line(80,'*');
   cout<<"\n\n\t\t\t*****THANKS FOR COMING TO CASINO*****\n\n\t\t\t*****YOUR FINAL AMOUNT IS Rs."<<balanceamt<<"*****\n\n";
   draw_line(80,'*');
-  cout<<"\n\n\t\t\t\t\tgame developed by: G.BALAJI\n\n";
+  cout<<"\n\n\t\t\t\t\tgame developed by: BALAJI G\n\n";
   draw_line(80,'*');
   getch();
+  return 0;
 }
 
 
@@ -80,7 +82,7 @@ for(int i=0;i<n;i++)
 
 void rules()
 {
-  clrscr();
+ system("cls");
   cout<<"\n\n";
   draw_line(80,'*');
   cout<<"\n\t\t\t*****RULES OF THE GAME*****\n";
